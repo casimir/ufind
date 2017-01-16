@@ -5,6 +5,7 @@ authors = ["Martin Chaine <martin@casimir.me>"]
 description = "Finds you all sort of funky characters"
 
 [dependencies]
+atty = "0.2"
 clap = "2"
 
 # vim: ft=ini

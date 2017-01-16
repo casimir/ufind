@@ -1,9 +1,11 @@
+extern crate atty;
 #[macro_use]
 extern crate clap;
 
-use clap::{App, AppSettings, Arg, SubCommand};
-
 mod digraph;
+
+use clap::{App, AppSettings, Arg, SubCommand};
+use std::io::{self, Write};
 
 fn build_cli() -> App<'static, 'static> {
     App::new(crate_name!())
@@ -18,6 +20,15 @@ fn build_cli() -> App<'static, 'static> {
                 .help("The search term, either a digraph sequence or a character")))
 }
 
+fn print_result(result: &str) {
+    if atty::is(atty::Stream::Stdout) {
+        println!("{}", result);
+    } else {
+        print!("{}", result);
+        io::stdout().flush().unwrap();
+    }
+}
+
 fn main() {
     let matches = build_cli().get_matches();
     match matches.subcommand() {
@@ -25,12 +36,12 @@ fn main() {
             if let Some(input) = digraph_matches.value_of("input") {
                 if input.chars().count() == 2 {
                     match digraph::get_char(input) {
-                        Some(c) => print!("{}", c),
+                        Some(c) => print_result(&format!("{}", c)),
                         None => std::process::exit(1),
                     }
                 } else if input.chars().count() == 1 {
                     match digraph::get_digraph(&input.chars().next().unwrap()) {
-                        Some(digraph) => print!("{}", digraph),
+                        Some(digraph) => print_result(&format!("{}", digraph)),
                         None => std::process::exit(1),
                     }
                 } else {

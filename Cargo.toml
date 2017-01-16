@@ -9,6 +9,6 @@ keywords = ["digraph"]
 
 [dependencies]
 atty = "0.2"
-clap = "2"
+clap = "2.20"
 
 # vim: ft=ini

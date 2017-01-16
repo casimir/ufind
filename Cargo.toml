@@ -2,7 +2,7 @@
 name = "ufind"
 version = "0.1.0"
 authors = ["Martin Chaine <martin@casimir.me>"]
-description = "Finds you all sort of funky characers"
+description = "Finds you all sort of funky characters"
 
 [dependencies]
 clap = "2"

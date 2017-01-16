@@ -23,12 +23,12 @@ fn main() {
             if let Some(input) = digraph_matches.value_of("input") {
                 if input.chars().count() == 2 {
                     match digraph::get_char(input) {
-                        Some(c) => print_result(&format!("{}", c)),
+                        Some(c) => print_result(&c.to_string()[..]),
                         None => std::process::exit(1),
                     }
                 } else if input.chars().count() == 1 {
                     match digraph::get_digraph(&input.chars().next().unwrap()) {
-                        Some(digraph) => print_result(&format!("{}", digraph)),
+                        Some(digraph) => print_result(&digraph[..]),
                         None => std::process::exit(1),
                     }
                 } else {

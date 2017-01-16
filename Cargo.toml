@@ -3,6 +3,9 @@ name = "ufind"
 version = "0.1.0"
 authors = ["Martin Chaine <martin@casimir.me>"]
 description = "Finds you all sort of funky characters"
+repository = "https://github.com/casimir/ufind"
+license = "MIT"
+keywords = ["digraph"]
 
 [dependencies]
 atty = "0.2"

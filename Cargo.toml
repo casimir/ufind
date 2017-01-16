@@ -1,0 +1,10 @@
+[package]
+name = "ufind"
+version = "0.1.0"
+authors = ["Martin Chaine <martin@casimir.me>"]
+description = "Finds you all sort of funky characers"
+
+[dependencies]
+clap = "2"
+
+# vim: ft=ini

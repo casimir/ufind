@@ -35,7 +35,6 @@ pub fn convert(pattern: &str) -> Option<String> {
 
 pub fn filter(pattern: &str) -> Vec<&Digraph> {
     match pattern.chars().count() {
-        0usize => TABLE.iter().collect(),
         1usize => {
             let c = pattern.chars().next().unwrap();
             TABLE.into_iter().filter(|&x| x.sequence[0] == c).collect()

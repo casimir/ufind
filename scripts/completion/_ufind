@@ -27,6 +27,8 @@ _ufind() {
         case $line[1] in
             (digraph)
 _arguments -s -S -C \
+"-c+[Converts a digraph sequence or a character to the other]" \
+"-f+[Prints information about matching digraphs]" \
 "-h[Prints help information]" \
 "--help[Prints help information]" \
 "-V[Prints version information]" \
@@ -39,7 +41,6 @@ _arguments -s -S -C \
 "--help[Prints help information]" \
 "-V[Prints version information]" \
 "--version[Prints version information]" \
-"1:: :_ufind_digraph_commands" \
 && ret=0
 ;;
 (help)
@@ -108,7 +109,7 @@ _ufind_commands() {
 (( $+functions[_ufind_digraph_commands] )) ||
 _ufind_digraph_commands() {
     local commands; commands=(
-        "INPUT:The search term, either a digraph sequence or a character" \
+        
     )
     _describe -t commands 'ufind digraph commands' commands "$@"
 }

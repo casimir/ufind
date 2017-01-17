@@ -46,7 +46,7 @@
             }
 
             '_ufind_digraph' {
-                $completions = @('-h', '-V', '-h', '-V', '-h', '-V', '-h', '-V', '--help', '--version', '--help', '--version', '--help', '--version', '--help', '--version')
+                $completions = @('-c', '-f', '-h', '-V', '-h', '-V', '-h', '-V', '-h', '-V', '--help', '--version', '--help', '--version', '--help', '--version', '--help', '--version')
             }
 
             '_ufind_help' {

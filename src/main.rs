@@ -20,19 +20,14 @@ fn main() {
     let matches = app::build().get_matches();
     match matches.subcommand() {
         ("digraph", Some(digraph_matches)) => {
-            if let Some(input) = digraph_matches.value_of("input") {
-                if input.chars().count() == 2 {
-                    match digraph::get_char(input) {
-                        Some(c) => print_result(&c.to_string()[..]),
-                        None => std::process::exit(1),
-                    }
-                } else if input.chars().count() == 1 {
-                    match digraph::get_digraph(&input.chars().next().unwrap()) {
-                        Some(digraph) => print_result(&digraph[..]),
-                        None => std::process::exit(1),
-                    }
-                } else {
-                    std::process::exit(2)
+            if digraph_matches.is_present("filter") {
+                for it in digraph::filter(digraph_matches.value_of("filter").unwrap()) {
+                    println!("{}{}\t{}", it.sequence[0], it.sequence[1], it.character)
+                }
+            } else if let Some(input) = digraph_matches.value_of("convert") {
+                match digraph::convert(input) {
+                    Some(out) => print_result(&out[..]),
+                    None => std::process::exit(1),
                 }
             }
         }

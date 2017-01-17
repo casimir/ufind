@@ -42,15 +42,23 @@ _ufind() {
             ;;
         
         ufind_digraph)
-            opts=" -c -f -h -V  --help --version  "
+            opts=" -c -f -h -V  --convert --filter --description --help --version  "
             if [[ ${cur} == -* || ${COMP_CWORD} -eq 2 ]] ; then
                 COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )
                 return 0
             fi
             case "${prev}" in
                 
+                --convert)
+                    COMPREPLY=("<convert>")
+                    return 0
+                    ;;
                     -c)
                     COMPREPLY=("<convert>")
+                    return 0
+                    ;;
+                --filter)
+                    COMPREPLY=("<filter>")
                     return 0
                     ;;
                     -f)

@@ -28,7 +28,10 @@ _ufind() {
             (digraph)
 _arguments -s -S -C \
 "-c+[Converts a digraph sequence or a character to the other]" \
+"--convert+[Converts a digraph sequence or a character to the other]" \
 "-f+[Prints information about matching digraphs]" \
+"--filter+[Prints information about matching digraphs]" \
+"--description[Prints results with description]" \
 "-h[Prints help information]" \
 "--help[Prints help information]" \
 "-V[Prints version information]" \

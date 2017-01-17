@@ -22,7 +22,15 @@ fn main() {
         ("digraph", Some(digraph_matches)) => {
             if digraph_matches.is_present("filter") {
                 for it in digraph::filter(digraph_matches.value_of("filter").unwrap()) {
-                    println!("{}{}\t{}", it.sequence[0], it.sequence[1], it.character)
+                    if digraph_matches.is_present("description") {
+                        println!("{}{}\t{}\t{}",
+                                 it.sequence[0],
+                                 it.sequence[1],
+                                 it.character,
+                                 it.description)
+                    } else {
+                        println!("{}{}\t{}", it.sequence[0], it.sequence[1], it.character)
+                    }
                 }
             } else if let Some(input) = digraph_matches.value_of("convert") {
                 match digraph::convert(input) {

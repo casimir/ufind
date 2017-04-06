@@ -23,6 +23,7 @@ pub fn build() -> App<'static, 'static> {
             .arg(Arg::with_name("description")
                 .help("Prints results with description")
                 .long("description")
+                .short("d")
                 .requires("filter"))
             .group(ArgGroup::with_name("modes")
                 .args(&["convert", "filter"])

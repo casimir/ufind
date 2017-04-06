@@ -42,7 +42,7 @@ _ufind() {
             ;;
         
         ufind__digraph)
-            opts=" -h -V -c -f  --description --help --version --convert --filter  "
+            opts=" -d -h -V -c -f  --description --help --version --convert --filter  "
             if [[ ${cur} == -* || ${COMP_CWORD} -eq 2 ]] ; then
                 COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )
                 return 0

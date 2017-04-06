@@ -1,6 +1,6 @@
 [package]
 name = "ufind"
-version = "0.3.0"
+version = "0.3.1"
 authors = ["Martin Chaine <martin@casimir.me>"]
 description = "Finds you all sort of funky characters"
 repository = "https://github.com/casimir/ufind"

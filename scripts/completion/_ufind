@@ -23,6 +23,7 @@ _arguments -s -S -C \
 "--convert+[Converts a digraph sequence or a character to the other]" \
 "-f+[Prints information about matching digraphs]" \
 "--filter+[Prints information about matching digraphs]" \
+"-d[Prints results with description]" \
 "--description[Prints results with description]" \
 "-h[Prints help information]" \
 "--help[Prints help information]" \

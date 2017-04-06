@@ -17,7 +17,7 @@ complete -c ufind -n "__fish_using_command ufind" -f -a "digraph" -d "Digraph lo
 complete -c ufind -n "__fish_using_command ufind" -f -a "help" -d "Prints this message or the help of the given subcommand(s)"
 complete -c ufind -n "__fish_using_command ufind digraph" -s c -l convert -d "Converts a digraph sequence or a character to the other"
 complete -c ufind -n "__fish_using_command ufind digraph" -s f -l filter -d "Prints information about matching digraphs"
-complete -c ufind -n "__fish_using_command ufind digraph" -l description -d "Prints results with description"
+complete -c ufind -n "__fish_using_command ufind digraph" -s d -l description -d "Prints results with description"
 complete -c ufind -n "__fish_using_command ufind digraph" -s h -l help -d "Prints help information"
 complete -c ufind -n "__fish_using_command ufind digraph" -s V -l version -d "Prints version information"
 complete -c ufind -n "__fish_using_command ufind help" -s h -l help -d "Prints help information"

@@ -19,21 +19,6 @@
                         break
                     }
 
-                    'help' {
-                        $command += '_help'
-                        break
-                    }
-
-                    'help' {
-                        $command += '_help'
-                        break
-                    }
-
-                    'help' {
-                        $command += '_help'
-                        break
-                    }
-
                 }
             }
 
@@ -42,23 +27,11 @@
         switch ($command) {
 
             '_ufind' {
-                $completions = @('digraph', 'help', 'help', 'help', 'help', '-h', '-V', '-h', '-V', '-h', '-V', '-h', '-V', '--help', '--version', '--help', '--version', '--help', '--version', '--help', '--version')
+                $completions = @('digraph', 'help', '-h', '-V', '--help', '--version')
             }
 
             '_ufind_digraph' {
-                $completions = @('-c', '-f', '-h', '-V', '-h', '-V', '-h', '-V', '-h', '-V', '--convert', '--filter', '--description', '--help', '--version', '--help', '--version', '--help', '--version', '--help', '--version')
-            }
-
-            '_ufind_help' {
-                $completions = @('-h', '-V', '-h', '-V', '-h', '-V', '-h', '-V', '--help', '--version', '--help', '--version', '--help', '--version', '--help', '--version')
-            }
-
-            '_ufind_help' {
-                $completions = @('-h', '-V', '-h', '-V', '-h', '-V', '--help', '--version', '--help', '--version', '--help', '--version')
-            }
-
-            '_ufind_help' {
-                $completions = @('-h', '-V', '-h', '-V', '--help', '--version', '--help', '--version')
+                $completions = @('-h', '-V', '-c', '-f', '--description', '--help', '--version', '--convert', '--filter')
             }
 
             '_ufind_help' {

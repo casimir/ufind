@@ -14,10 +14,10 @@ _ufind() {
                 ;;
             
             digraph)
-                cmd+="_digraph"
+                cmd+="__digraph"
                 ;;
             help)
-                cmd+="_help"
+                cmd+="__help"
                 ;;
             *)
                 ;;
@@ -41,8 +41,8 @@ _ufind() {
             return 0
             ;;
         
-        ufind_digraph)
-            opts=" -c -f -h -V  --convert --filter --description --help --version  "
+        ufind__digraph)
+            opts=" -h -V -c -f  --description --help --version --convert --filter  "
             if [[ ${cur} == -* || ${COMP_CWORD} -eq 2 ]] ; then
                 COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )
                 return 0
@@ -72,7 +72,7 @@ _ufind() {
             COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )
             return 0
             ;;
-        ufind_help)
+        ufind__help)
             opts=" -h -V  --help --version  "
             if [[ ${cur} == -* || ${COMP_CWORD} -eq 2 ]] ; then
                 COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )

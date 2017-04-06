@@ -1,19 +1,11 @@
 #compdef ufind
 
 _ufind() {
-	typeset -A opt_args
-	local ret=1
+    typeset -A opt_args
+    local ret=1
 
-	local context curcontext="$curcontext" state line
+    local context curcontext="$curcontext" state line
     _arguments -s -S -C \
-"-h[Prints help information]" \
-"--help[Prints help information]" \
-"-V[Prints version information]" \
-"--version[Prints version information]" \
-"-h[Prints help information]" \
-"--help[Prints help information]" \
-"-V[Prints version information]" \
-"--version[Prints version information]" \
 "-h[Prints help information]" \
 "--help[Prints help information]" \
 "-V[Prints version information]" \
@@ -36,58 +28,10 @@ _arguments -s -S -C \
 "--help[Prints help information]" \
 "-V[Prints version information]" \
 "--version[Prints version information]" \
-"-h[Prints help information]" \
-"--help[Prints help information]" \
-"-V[Prints version information]" \
-"--version[Prints version information]" \
-"-h[Prints help information]" \
-"--help[Prints help information]" \
-"-V[Prints version information]" \
-"--version[Prints version information]" \
 && ret=0
 ;;
 (help)
 _arguments -s -S -C \
-"-h[Prints help information]" \
-"--help[Prints help information]" \
-"-V[Prints version information]" \
-"--version[Prints version information]" \
-"-h[Prints help information]" \
-"--help[Prints help information]" \
-"-V[Prints version information]" \
-"--version[Prints version information]" \
-"-h[Prints help information]" \
-"--help[Prints help information]" \
-"-V[Prints version information]" \
-"--version[Prints version information]" \
-&& ret=0
-;;
-(help)
-_arguments -s -S -C \
-"-h[Prints help information]" \
-"--help[Prints help information]" \
-"-V[Prints version information]" \
-"--version[Prints version information]" \
-"-h[Prints help information]" \
-"--help[Prints help information]" \
-"-V[Prints version information]" \
-"--version[Prints version information]" \
-"-h[Prints help information]" \
-"--help[Prints help information]" \
-"-V[Prints version information]" \
-"--version[Prints version information]" \
-&& ret=0
-;;
-(help)
-_arguments -s -S -C \
-"-h[Prints help information]" \
-"--help[Prints help information]" \
-"-V[Prints version information]" \
-"--version[Prints version information]" \
-"-h[Prints help information]" \
-"--help[Prints help information]" \
-"-V[Prints version information]" \
-"--version[Prints version information]" \
 "-h[Prints help information]" \
 "--help[Prints help information]" \
 "-V[Prints version information]" \
@@ -104,20 +48,18 @@ _ufind_commands() {
     local commands; commands=(
         "digraph:Digraph lookup and resolution" \
 "help:Prints this message or the help of the given subcommand(s)" \
-"help:Prints this message or the help of the given subcommand(s)" \
-"help:Prints this message or the help of the given subcommand(s)" \
     )
     _describe -t commands 'ufind commands' commands "$@"
 }
-(( $+functions[_ufind_digraph_commands] )) ||
-_ufind_digraph_commands() {
+(( $+functions[_ufind__digraph_commands] )) ||
+_ufind__digraph_commands() {
     local commands; commands=(
         
     )
     _describe -t commands 'ufind digraph commands' commands "$@"
 }
-(( $+functions[_ufind_help_commands] )) ||
-_ufind_help_commands() {
+(( $+functions[_ufind__help_commands] )) ||
+_ufind__help_commands() {
     local commands; commands=(
         
     )
